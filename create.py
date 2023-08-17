@@ -92,7 +92,7 @@ def clear():
 #88b  d88 88  88  88 88   88 88 `88. 
 #~Y8888P' YP  YP  YP YP   YP 88   YD 
 
-------------------------------------------
+\033[1;37m------------------------------------------""")
  Author : Mr Mubashir
  Github : Khokha1432 (Follow Must)
  Tools  : Auto Facebook Register
