@@ -213,20 +213,20 @@ def Create():
         em=mmail['mail']
         num="03"+rnd(10,49)+rnd(1111111,9999999)
         headers1 = {
-            'accept': 'text/html,application/xhtm 1+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
-            'accept-encoding': 'gzip, deflate',
-            'accept-language': 'en-GB, en;q=0.9, en-US;q=0.8,en;q=0.7',
+            'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
+            'accept-encoding': 'gzip, deflate, br'
+            'accept-language': 'en-US, en;q=0.9',
             'cache-control': 'max-age=0',
             'sec-ch-prefers-color-scheme': 'light',
-            'sec-ch-ua': '"Not: A-Brand"; v="99", "Chromium";V="112"',
-            'sec-ch-ua-full-version-list': '"Not:A-Brand"; v "99.0.0.0", "Chromium";v="112.0.5615.137"',
+            'sec-ch-ua': '"Not: A-Brand"; v="24", "Chromium";V="116"',
+            'sec-ch-ua-full-version-list': '"Not:A-Brand"; v "24.0.0.0", "Chromium";v="116.0.5845.72"',
             'sec-ch-ua-mobile': '?1',
             'sec-ch-ua-platform': '"Android"',
-            'sec-ch-ua-platform-version': '"11.0.0"',
+            'sec-ch-ua-platform-version': '"10.0.0"',
             'sec-fetch-dest': 'document',
             'sec-fetch-mode': 'navigate',
             'sec-fetch-site': 'none',
-            'sec-fetch-user': '21',
+            'sec-fetch-user': '?2',
             'upgrade-insecure-requests': '1',
             'user-agent': random_ua()}
         url1 = 'https://m.facebook.com/reg/?is_two_steps_login=0&cid=103&refsrc=deprecated&soft=hjk'
