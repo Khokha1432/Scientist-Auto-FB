@@ -214,7 +214,7 @@ def Create():
         num="03"+rnd(10,49)+rnd(1111111,9999999)
         headers1 = {
             'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
-            'accept-encoding': 'gzip, deflate, br'
+            'accept-encoding': 'gzip, deflate, br',
             'accept-language': 'en-US', 'en;q=0.9',
             'cache-control': 'max-age=0',
             'sec-ch-prefers-color-scheme': 'light',
