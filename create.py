@@ -85,7 +85,7 @@ def linex():
 def clear():
     import os
     os.system("clear")
-  #  print("""\033[1;37mdb    db .88b  d88.  .d8b.  d8888b. 
+    print("""\033[1;37mdb    db .88b  d88.  .d8b.  d8888b. 
 #88    88 88'YbdP`88 d8' `8b 88  `8D 
 #88    88 88  88  88 88ooo88 88oobY' 
 #88    88 88  88  88 88~~~88 88`8b   
