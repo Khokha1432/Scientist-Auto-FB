@@ -115,13 +115,9 @@ try:
     if "Version-1.5" in response:
         print(" Already Up To Date...")
         linex()
-        print(' Checking For Approval....')
+       # print(' Checking For Approval....')
         linex()
-        if kex in response:
-            linex()
-            print(" Your key: "+fkeyx);subprocess.check_output(["am", "start", "https://api.whatsapp.com/send?phone=+923203714588&text="+(" Hi UMAR sir i want Buy Auto Create Ids Tool Please Approve My Token\n Token:- "+ fkeyx)]);time.sleep(2)
-            exit('\n Run:  python create.py')
-            sys.exit()
+       
     else:
         print(' Update done successfully wait for setup! ')
         time.sleep(2)
