@@ -193,7 +193,7 @@ def Create():
     def process(pas,mmail):
         global ok
         import requests,re
-        requests=requests.Session()
+        requests=requests.Session() 
         cookies=None
         def find(txtt,wrd):
                xx = re.findall('name="'+wrd+'" value="(.*?)"',txtt.replace("amp;",""))[0]
@@ -201,6 +201,10 @@ def Create():
         import requests,re,random
         requests=requests.Session()
         cookies=None
+        self.abc = requests.Session()
+        self.abc.cookies.clear()
+        self.head_email = {'Accept':'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7','Accept-Encoding':'gzip, deflate','Accept-Language':'en-US,en;q=0.9','Pragma':'akamai-x-cache-on, akamai-x-cache-remote-on, akamai-x-check-cacheable, akamai-x-get-cache-key, akamai-x-get-extracted-values, akamai-x-get-ssl-client-session-id, akamai-x-get-true-cache-key, akamai-x-serial-no, akamai-x-get-request-id,akamai-x-get-nonces,akamai-x-get-client-ip,akamai-x-feo-trace','Sec-Ch-Ua':'','Sec-Ch-Ua-Mobile':'?1','Sec-Ch-Ua-Platform':'','Sec-Fetch-Dest':'document','Sec-Fetch-Mode':'navigate','Sec-Fetch-Site':'none','Sec-Fetch-User':'?1','Upgrade-Insecure-Requests':'1','User-Agent':'Mozilla/5.0 (Linux; Android 11; vivo 1918 Build/RP1A.200720.012; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/112.0.0000.00 Mobile Safari/537.36'}
+        
         ua=random_ua()
         from fake_email import Email
         mmail=Email().Mail()
@@ -375,6 +379,53 @@ def Create():
         url = 'https://m.facebook.com/confirmation_cliff/'
         response = requests.post(url, headers=headers, data=data)
         return requests
+    def get_email_cryptogmail(self):
+        nam = self.name.lower().replace(' ','')
+        jam = str(datetime.now().strftime("%X")).replace(':','')
+        ran = str(random.randrange(1000,10000))
+        dom = random.choice(['fexbox.org','chitthi.in','fextemp.com','any.pink','merepost.com'])
+        email = f'{nam}.{jam}.{ran}@{dom}'
+        return(email)
+    def get_code_cryptogmail(self):
+        url = f'https://tempmail.plus/api/mails?email={self.email}'
+        req = self.abc.get(url,headers=self.head_email).json()
+        kode = re.search(r'FB-([^ ]+)',str(req)).group(1)
+        return(kode)
+    try:
+            if   web_email in ['c','cryptogmail','1','01','a']: code = self.get_code_cryptogmail()
+            elif web_email in ['s','secmail','2','02','b']:     code = self.get_code_onesecmail()
+            elif web_email in ['m','minutemail','4','04','d']:  code = self.get_code_10minutemail()
+            else : code = self.get_code_10minutemail()
+            id = re.search('c_user=(.*?);',cok).group(1)
+            lsd = re.search('"LSD",\[\],{"token":"(.*?)"',str(req)).group(1)
+            dtsg = re.search('"dtsg":{"token":"(.*?)",',str(req)).group(1)
+            jazoest = re.search('"jazoest", "(.*?)",',str(req)).group(1)
+            data = {
+                'contact': self.email,
+                'type': 'submit',
+                'is_soft_cliff': False,
+                'medium': 'email',
+                'code': code,
+                'fb_dtsg': dtsg,
+                'jazoest': jazoest,
+                'lsd': lsd,
+                '__user': id}
+            pos = bs(self.xyz.post('https://m.facebook.com/confirmation_cliff/',data=data,headers=self.headers_get,cookies={'cookie':cok},allow_redirects=True).content,'html.parser')
+            self.semi_final()
+    except Exception as e:
+        self.printing('CP')
+    def get_email_cryptogmail(self):
+        nam = self.name.lower().replace(' ','')
+        jam = str(datetime.now().strftime("%X")).replace(':','')
+        ran = str(random.randrange(1000,10000))
+        dom = random.choice(['fexbox.org','chitthi.in','fextemp.com','any.pink','merepost.com'])
+        email = f'{nam}.{jam}.{ran}@{dom}'
+        return(email)
+    def get_code_cryptogmail(self):
+        url = f'https://tempmail.plus/api/mails?email={self.email}'
+        req = self.abc.get(url,headers=self.head_email).json()
+        kode = re.search(r'FB-([^ ]+)',str(req)).group(1)
+        return(kode)
     def strt():
        try:
            global ok,loop,cp,ok1
